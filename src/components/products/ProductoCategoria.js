@@ -16,7 +16,7 @@ function ProductCategory(){
   
 
     return (
-      <div class="productocategoria">
+      <div className="productocategoria">
         {categorias.map((category) => (
           <div key={category.id}>
             <h2>{category.name}</h2>

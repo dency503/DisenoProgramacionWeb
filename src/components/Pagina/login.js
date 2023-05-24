@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom/dist';
+
 
 axios.defaults.withCredentials = true;
 function Login() {
     const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  
+
+
   const handleSubmit = async (event) => {
     event.preventDefault(); // evita que se recargue la página al enviar el formulario
   
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/usuarios/login',
+        process.env.REACT_APP_API_URL + '/api/usuarios/login',
         { username, password },
         { headers: { 'Content-Type': 'application/json' } }
       );
-  
+
       if (response.data.isLoggedIn) {
         setIsLoggedIn(true);
       }
@@ -33,7 +36,7 @@ function Login() {
   }
     return (
         <form onSubmit={handleSubmit}>
-            <div class="cuadro">
+            <div className="cuadro">
                 <h1>Acceder</h1>
                 <div class="socialred">
                     <div class="div-4">
@@ -48,14 +51,14 @@ function Login() {
                   
                   https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7356f4843bcb42f48b53e189e3334628?width=2000 2000w,
                   https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F7356f4843bcb42f48b53e189e3334628
-                " class="image" />
+                " className="image" />
                         </picture>
-                        <div class="builder-image-sizer image-sizer"></div>
+                        <div className="builder-image-sizer image-sizer"></div>
                     </div>
-                    <div class="letraredes">Continuar con Google</div>
+                    <div className="social-login-text">Continuar con Google</div>
                 </div>
-                <div class="socialred">
-                    <div class="div-4">
+                <div className="socialred">
+                    <div className="div-4">
                         <picture>
                             <source srcset="
                   
@@ -69,32 +72,32 @@ function Login() {
                   https://cdn.builder.io/api/v1/image/assets%2FTEMP%2F8372de16d2504e328e99f2916d15c1f8
                 " class="image" />
                         </picture>
-                        <div class="builder-image-sizer image-sizer-2"></div>
+                        <div className="builder-image-sizer image-sizer-2"></div>
                     </div>
-                    <div class="letraredes">Continuar con Google</div>
+                    <div className="letraredes">Continuar con Google</div>
                 </div>
 
 
 
-                <div class="input-text">
-                <input type="text" name='username'  placeholder='Usuario'  value={username} onChange={e => setUsername(e.target.value)} />
+                <div className="input-text">
+                <input type="text" name='username'  placeholder={'Usuario'}  value={username} onChange={e => setUsername(e.target.value)} />
                 </div>
 
 
-                <div class="input-text">
+                <div className="input-text">
                 <input type="password" name='password' placeholder='Contraseña' value={password} onChange={e => setPassword(e.target.value)} />
 
                 </div>
 
 
-                <button class="a" type="submit">Login</button>
+                <button className="login-button" type="submit">Login</button>
 
-                <div class="letraspequeñas">
+                <div className="letraspequeñas">
                     ¿Olvidé mi contraseña? <a href="URL_de_recuperacion">Recuperar contraseña</a>
                 </div>
 
-                <div class="letraspequeñas">
-                    ¿No tienes una cuenta? <a href="/api/usuarios/nuevo-usuario">Registrarse</a>
+                <div className="letraspequeñas">
+                    ¿No tienes una cuenta? <Link to="/register">Registrarse</Link>
                 </div>
 
             </div>

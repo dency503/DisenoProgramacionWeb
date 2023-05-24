@@ -14,22 +14,22 @@ function Producto(props) {
 
 
     return (
-        <div class="producto">
+        <div className="producto">
             <Link to={`/product/${product.id}`} >
                 <img src={product.imageName}
                     alt="" />
-                <div class="productoinfo">
+                <div className="productoinfo">
                     <p> {product.name}<span>$ <span>{product.price}</span></span></p>
                     <div>
                         <span>Talla</span>
                         <div class="btns">
-                            <div class="btnproducto">
+                            <div className="btnproducto">
                                 S
                             </div>
-                            <div class="btnproducto">
+                            <div className="btnproducto">
                                 M
                             </div>
-                            <div class="btnproducto">
+                            <div className="btnproducto">
                                 L
                             </div>
                         </div>
