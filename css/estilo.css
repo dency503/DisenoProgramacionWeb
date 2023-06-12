@@ -1,30 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
-/* SELECTORES BASICOS */
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');/* SELECTORES BASICOS */
 header, section, nav, footer, figure{
     display: block;
     margin: 0;
     padding: 0;
-}
-body{
+} 
+ body{
     margin: 0;
-    background: #FFF4FA;
-}
+} 
 *{
     box-sizing: border-box;
-}
+} 
 a{
     text-decoration: none;
-}
+    color: black;
+} 
 a img{
     width: 68px;
     padding: 0px;
     border: none;
-}
-ul, ol{
-    font-size: 14px;
-    color: black;
-}
+} 
 #cajacabecera{
     width: 100%;
     background: #FFF4FA;
@@ -32,35 +28,37 @@ ul, ol{
     left: 0;
     top: 0;
     z-index: 999;
-}
+}  
 #cabecera{
     width: 100%;
     height: 11%;
     max-height: 1100px;
     display: flex;
     margin: auto;
-    border-bottom-style: solid;
     border-width: 1px;
-}
+}  
 #logo{
     width: 20%;
-    padding: 0px 30px;
-}
+    padding: 0px 18px;
+} 
 /* -------------------MENU------------------------ */
 .menu{
     width: 80%;
 }
-#btn-menu{
+ #btn-menu{
     display: none;
-}
+} 
 #mmovil{
     font-size: 30px;
     cursor: pointer;
     text-align: left;
     color: black;
     display: none;
-    padding: 0px 10px;
+    padding:20px 10px;
 }
+.menu li{
+    padding: 0px 3px;
+} 
 .menu ul{
     display: flex;
     justify-content: flex-end;
@@ -74,12 +72,12 @@ ul, ol{
     padding: 0px 10px;
     color: black;
     font-family: 'Inter';
-    font-size: 16px;
-}
+    font-size: 14px;
+} 
 .menu a i{
     font-size: 16px;
     padding: 0 5px;
-}
+} 
 .carro{
     background-color: grey;
     margin-left: 20px;
@@ -89,51 +87,285 @@ ul, ol{
     color: #fff;
     border-bottom: 0px solid #f2f2f2;
     background-color: #f2e9;
-}
-
-/* -------------------SUB MENU------------------------ */
-.mmenu{
-    position: absolute;
-    width: 100%; 
-    top: 100%;
-    left: 0;
-   transform: translateX(-100%);
- }
-#btn-submenu{
-    display: none;
-}
-#categoria{
-    cursor: pointer;
-    text-align: left;
-    padding: 0px 6px 0px 0px;
-    font-size: 12px;
-}
-.btn{
-    display: flex;
-    flex-direction: row;
-    padding: 0px 30px;
-    border-right-style: solid ;
-    border-width: 1px;
-}
+} 
 .menum{
     padding: 0px 30px; 
     border-right-style: solid ;
     border-width: 1px;
-} 
-.mmenu ul{
-    flex-direction: column;
-    background: #FFF4FA;
-}
-.mmenu a{
-    line-height: 45px;
-    padding: 0px 30px;
-    border-bottom: 1px solid black;
-}
-.submenum{
-    display: flex;
-} 
-#btn-submenu:checked ~ .mmenu{
-    transform: translateX(0%); 
-    transition: all 0.6s; 
-}
+}  
 
+/* -------------------SUB MENU------------------------ */
+.menum ul{
+    position: absolute;
+    width: 150px;
+    padding: 10px 22px 0px 0px;
+    display: none;
+} 
+.ccategoria{
+    width: 100%;
+    border-top: 1px solid #0000;
+    background: #f2e9;
+    text-align: center;
+} 
+.menum:hover > ul{
+    display: initial;
+} 
+/* -------------------CARRUSEL------------------------ */
+
+.slider-frame{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+.slides{
+    width: 500%;
+    display: flex;
+}
+.slides input{
+    display: none;
+}
+.slider-frame img{
+    width: 100%;
+}
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+.nav-manual{
+    position: absolute;
+    width: 100%;
+    padding: 240px 0px 0px 0px;
+    margin-top: -40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.manual-btn{
+    border: 2px solid blanchedalmond;
+    padding: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.manual-btn:not(:last-child){
+    margin-right: 10px;
+}
+.manual-btn:hover{
+    background-color: blanchedalmond;
+}
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+/*  **************************************CUADRO DE ROPA: MUJER, HOMBRE************************************* */
+
+.muestra{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.imagenMujer{
+    width: 322px;
+    height: 254px;
+    display: flex;
+    margin: 30px 60px;
+    overflow: hidden;
+}
+.colorCajaM{
+    width: 322px;
+    height: 254px;
+    margin: 30px 60px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    text-decoration-line: underline;
+    justify-content: center;
+    align-items: center;
+    background: rgba(188, 143, 143, 0.5);
+} 
+.imagenHombre{
+    width: 322px;
+    height: 254px;
+    float: left;
+    position: relative;
+    display: flex;
+    margin: 30px 60px;
+    overflow: hidden;
+}
+.colorCajaH{
+    width: 322px;
+    height: 254px;
+    margin: 30px 60px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    text-decoration-line: underline;
+    justify-content: center;
+    align-items: center;
+    background: rgba(62, 62, 221, 0.5);
+} 
+/* *******************************************PRODUCTOS******************************************* */
+
+h1{
+    font-family: 'inter';
+    padding: 0px 20px;
+    font-size: 30px;
+} 
+h4, h5{
+    font-family: 'inter';
+}
+.ADetallesProductos h5{
+    font-size: 19px;
+}
+.container{
+    margin: 2% 2%;
+    width: 255px;;
+    height: 350px; 
+    border-width: 1px;
+    border-color: rgb(211, 218, 218); 
+    border-style: solid;
+    overflow: hidden; 
+    text-align: center;
+}
+.respon{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} 
+ .imagenProducto{
+    width: 90%;
+    height: 60%;
+    margin: 0 4%;
+    overflow: hidden;
+} 
+.imagenProducto img{
+    width: 100%;
+    height: 100%;
+    margin: 3% 0;
+}
+.ADetallesProductos{
+    width: 90%;
+    height: 20%;
+    margin: 0 5%;
+    padding: 1%;
+}
+.nombre{
+    width: 100%;
+    height: 60%;
+    margin: 0;
+    padding: 1% 1%;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    overflow: hidden;
+}
+.precio{
+    width: 100%;
+    height: 55%;
+    padding: 1% 1%;
+    margin: 0% 0% 1% 0%;
+}
+.botones{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 25%;
+    justify-content: space-between;
+} 
+.detallesMas{
+    background: rgba(123, 51, 151, 0.100);
+    width: 30%;
+    height: 40%;
+    margin: 2% 4%;
+    border-style: solid;
+    border-radius: 3%;
+    border-width: 1px;
+    color: #000000;
+    padding: 6px;
+}
+.Agregar{
+    background: rgba(89, 60, 194, 0.100);
+    width: 30%;
+    height: 40%;
+    margin: 2% 4%;
+    border-style: solid;
+    border-radius: 3%;
+    border-width: 1px;
+    color: #000000;
+    padding: 6px;
+} 
+.detallesMas:hover{
+    background: rgb(45, 61, 45);
+    color: #fff;
+}
+.detallesMas a:hover{
+    color: #fff;
+}
+.Agregar:hover{
+    background: rgb(45, 61, 45);
+    color: #fff;
+}
+.Agregar a:hover{
+    background: rgb(45, 61, 45);
+    color: #fff;
+} 
+/* *******************************************NOSOTROS******************************************* */
+.pnosotros{
+    height: 700px;
+    margin: 20% 2%;
+}
+#nosotros{
+    text-align: center;
+    font-size: 18px;
+}
+/* *******************************************NOSOTROS******************************************* */
+.pcontactenos{
+    height: 400px;
+    margin: 20% 10%;
+}
+#contactenos{
+    font-size: 18px;
+}
+.redes{
+    list-style: none;
+}
+.redes li{
+   padding: 1% 0;
+}
+.redes a{
+    font-size: 18px;
+ }
+/* *******************************************FOOTER******************************************* */
+
+#piepagina{
+    background: #DFA7E4;
+    padding: 1px 0;
+}
+ #piepagina p{
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    font-family:'Dosis';
+}
+#piepagina ul{
+   justify-content: center;
+    display: flex;
+    list-style: none;
+    margin-right: 25px;
+}
+#piepagina ul li{
+    padding: 0 14px;
+}
+#piepagina ul li a{
+    display: block;
+    color: #ffffff;
+    text-align: right;
+    font-size: 25px;
+}
