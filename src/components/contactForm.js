@@ -57,6 +57,8 @@ const ContactForm = () => {
         handleBlur,
         handleSubmit
     } = useForm(initialForm, validateForm)
+
+    
     return (
         <div className='boxcontainer'>
             <h2>contactForm</h2>

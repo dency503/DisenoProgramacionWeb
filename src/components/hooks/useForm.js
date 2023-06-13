@@ -1,17 +1,20 @@
 import { useState, useCallback } from 'react'
 import { helpHttp } from '../helpHttp'
-import swal from 'sweetalert'
+
 export const useForm = (initialForm, validateForm) => {
    const [form, setForm] = useState(initialForm)
    const [errors, setErrors] = useState({})
    const [loading, setLoading] = useState(false)
    const [response, setResponse] = useState(null)
+   
 
 
-   const handleChange = useCallback(({ target: { name, value } }) => {
+   const handleChange = useCallback(({ target: { name, value, type, checked } }) => {
+      const inputValue = type === 'checkbox' ? checked : value;
       setForm({
          ...form,
          [name]: value,
+         [name]: inputValue,
       })
    }, [form]);
 
@@ -27,7 +30,7 @@ export const useForm = (initialForm, validateForm) => {
          button: "Acepted"
       });
    }
-
+  
    const showErrorAlert = () => {
       swal({
          title: "Debes llenar el formulario",
@@ -35,16 +38,19 @@ export const useForm = (initialForm, validateForm) => {
          button: "ok"
       });
    }
+   const limpiarFormulario = () => {
+      setForm(initialForm);  // Restablecer el estado del formulario a sus valores iniciales
+    };
    const handleSubmit = async (e) => {
       e.preventDefault();
-
-      setErrors(validateForm(form))
+     
 
       if (Object.keys(errors).length === 0) {
          showSuccessAlert();
          setLoading(true);
 
-         const API_ENDPOINT = 'https://formsubmit.co/ajax/dennisgodinez64@gmail.com';
+        
+         
 try {
    
    const res = await helpHttp()
@@ -59,16 +65,20 @@ try {
 
                setLoading(false);
                setResponse(true);
-
+               limpiarFormulario();
+            ocultarModalInsertar();
             })
 
-
+            
       } catch (err) {
    console.error(err);
   
       }
    }else{
       showErrorAlert();
+       limpiarFormulario();
+            
+            
    }}
    return {
       form,
@@ -76,8 +86,8 @@ try {
       loading,
       response,
       handleChange,
-      handleBlur,
-      handleSubmit
+      handleSubmit,
+      handleBlur
    }
 }
 

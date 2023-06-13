@@ -20,6 +20,7 @@ function Login() {
         { username, password },
         { headers: { 'Content-Type': 'application/json' } }
       );
+      console.log(response.headers.get("authorization"));
 
       if (response.data.isLoggedIn) {
         setIsLoggedIn(true);

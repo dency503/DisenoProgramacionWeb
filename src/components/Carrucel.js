@@ -30,7 +30,7 @@ export default () => {
           disableOnInteraction: false, // Allow autoplay to continue even when user interacts with slides
         }}
         onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
+       
       >
 
         <SwiperSlide><img src='https://assets.adidas.com/images/w_1880,f_auto,q_auto/1dae35753c24403e8e64ae8401147793_9366/HK7486_01_laydown.jpg' style={{ height: '300px' }} /></SwiperSlide>

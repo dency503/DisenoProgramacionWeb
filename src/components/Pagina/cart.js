@@ -1,12 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import AgregarAlCarrito from '../js/agregaralcarrito';
 
 
-function Cart() {
+
+const initialForm = {
+  name: "",
+  cantidad: ""
+}
+const validateForm = (form) => {
+  let errors = {};
+
+
+  if (!form.cantidad.trim()) {
+      errors.name = "El campo 'nombre' es requerido";
+
+  }
+  return errors;
+}
+
+
+const Cart = () => {
+  const {
+    form,
+    errors,
+    loading,
+    response,
+    handleChange,
+    handleBlur,
+    handleSubmit
+} = AgregarAlCarrito(initialForm, validateForm)
     const [carritoUsuario, setCarrito] = useState(null);
   
     useEffect(() => {
-      axios.get(`http://localhost:8080/carrito`)
+      axios.get(process.env.REACT_APP_API_URL +`/api/carrito/`)
         .then(response => {
           setCarrito(response.data);
         })
@@ -19,12 +46,13 @@ function Cart() {
       return (
         <div className="cart">
           <div>Loading...</div>
+          <div class="spinner"></div>
         </div>
       );
     }
   
     return (
-      <form action="" method="post">
+      <form onSubmit={handleSubmit}>
         <div className="cart">
           <section className="shopping-cart">
             <div className="title-cart">
@@ -40,9 +68,11 @@ function Cart() {
                   </div>
                   <div className="">
                     <button onClick="{}">-</button>
-                    <input type="number" id="producto1-contador" value="0" readOnly />
+                    <input type="number" id="producto1-contador" value={form.cantidad}  onBlur={handleBlur}
+                    onChange={handleChange} readOnly />
                     <button onClick="">+</button>
                     <h4>$ <span>{item.producto.price}</span></h4>
+                    <AgregarAlCarrito productid={1} initialForm={initialForm} validateForm={validateForm} />
                   </div>
                 </div>
               ))}

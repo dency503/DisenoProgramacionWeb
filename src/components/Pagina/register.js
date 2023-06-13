@@ -13,7 +13,7 @@ function Register() {
 
         try {
             const response = await axios.post(
-                process.env.REACT_APP_API_URL + '/api/usuarios/login',
+                process.env.REACT_APP_API_URL + '/api/usuarios/registro',
                 { username,email, password },
                 { headers: { 'Content-Type': 'application/json' } }
             );

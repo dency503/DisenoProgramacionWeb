@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Agregar from '../js/agregaralcarrito'
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080';
+const API_URL = 'http://localhost:8080/api';
 function ProductList() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -65,8 +65,8 @@ function ProductList() {
     <div className="boxcontainer">
 
       <figure className="imgcontainer"><img
-        src={product.imageName}
-        alt=""/></figure>
+        src={product.urlImage}
+        alt={product.imageName}/></figure>
       <div class="detalleproducto">
         <h1 >{product.name}</h1>
         <p>$ <span> {product.price}</span></p>
@@ -84,9 +84,9 @@ function ProductList() {
             </div>
           </div>
         </div>
-        <p>{product.description}
+        <p>{product.details.description}
         </p>
-        <Agregar productid={product.id} />
+       
       </div>
 
     </div>
