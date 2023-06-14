@@ -11,7 +11,7 @@ import 'swiper/swiper-bundle.css';
 function ProductCard(props) {
   const { name, path } = props;
   const [products, setProducts] = useState([]);
-  const [headers, setHeaders] = useState([]);
+
   const [slidesPerView, setSlidesPerView] = useState(4);
 
   SwiperCore.use([Navigation, Pagination]);
@@ -20,7 +20,7 @@ function ProductCard(props) {
     axios.get(path)
       .then(response => {
         setProducts(response.data);
-        setHeaders(response.headers.get('Mensaje'));
+       
       })
       .catch(error => {
         console.error(error);

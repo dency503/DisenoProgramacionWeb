@@ -18,6 +18,8 @@ import Cart from './components/Pagina/cart';
 import  ProductoLista  from './components/Pagina/ProductoLista';
 
 import './styles/style.css';
+import './styles/mediak.css';
+
 function App() {
   return (
     <>

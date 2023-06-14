@@ -8,7 +8,7 @@ function Search(){
     const [products, setCategorias] = useState([]);
 
     useEffect(() => {
-      axios.get(`http://localhost:8080/search?q=${query}`)
+      axios.get(`${process.env.REACT_APP_API_URL}/search?q=${query}`)
         .then(response => {
           setCategorias(response.data);
         })

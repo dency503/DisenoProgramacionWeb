@@ -1,5 +1,5 @@
 
-import React, { useState,useCallback } from 'react';
+/*import React, { useState,useCallback } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert'
 const AgregarAlCarrito = (initialForm, validateForm,props) => {
@@ -85,4 +85,4 @@ console.error(err);
  }
 }
 
-export default AgregarAlCarrito;
+export default AgregarAlCarrito;*/

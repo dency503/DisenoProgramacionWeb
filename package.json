@@ -18,6 +18,7 @@
     "react-spring": "^9.7.1",
     "reactstrap": "^9.2.0",
     "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.7.12",
     "swiper": "^9.3.2",
     "web-vitals": "^3.3.1"
   },

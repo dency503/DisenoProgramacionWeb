@@ -1,0 +1,109 @@
+/*  ------------------------------------------------------------
+ -----------------ESTILO PARA 1024---------------------------
+ ------------------------------------------------------------ */
+ @media only screen and (max-width: 1024px){
+
+ }
+ /*  ------------------------------------------------------------
+  -----------------ESTILO PARA 920---------------------------
+  ------------------------------------------------------------ */
+ @media only screen and (max-width: 920px){
+  
+    #subcabecera{
+        flex-direction: column;
+    }
+    #logo{
+         width: 100%;
+     }
+    #logo img{
+        display: block;
+        margin: auto;
+     }
+ /* ---------------------------MENU------------------------------------- */
+   .menu{
+        position: absolute;
+        width: 100%; 
+        top: 100%;
+        right: 0;
+        transform: translateX(100%);
+     }
+    #mmovil {
+        display: block;
+     }
+     #mmovil i{
+        text-align: right;
+     }
+    .menu ul{
+         flex-direction: column;
+         background: #FFF4FA;
+     }
+     .menum{
+        width: 100%;
+     } 
+    .menu a{
+         line-height: 40px;
+         padding: 0px 20px;
+         border-bottom: 1px solid rgb(190, 187, 187);
+         text-transform: uppercase;
+     } 
+    .menum ul{
+        position: relative;
+        width: 100%;
+        left: 0;
+    } 
+    .ccategoria{
+        text-align: left;
+    } 
+    .carro{
+        background-color: #FFF4FA;
+        margin-left: 0;
+        } 
+    .menu a i{
+        padding: 0px;
+        font-size: 0px;
+        } 
+    #btn-menu:checked ~ .menu{
+        display: initial;
+         transform: translateX(0%); 
+         transition: all 0.6s; 
+     }
+      /*---------------------- CARRUSEL---------------- */
+
+    #espCarrusel{
+        height: 150px;
+        margin: 75px 0px;
+    }
+
+
+    .slider-frame{
+        height: 300px;
+    }
+    .nav-manual{
+        padding: 130px 0px 0px 0px;
+    }
+    .manual-btn{
+        padding: 2px;
+    }
+/*  **************************************CUADRO DE ROPA: MUJER, HOMBRE************************************* */
+
+    .muestra{
+       display: none;
+    }
+    /* *******************************************NOSOTROS******************************************* */
+  
+  /* *******************************************FOOTER******************************************* */
+ 
+  } 
+
+  /*  ------------------------------------------------------------
+  -----------------ESTILO PARA 603---------------------------
+  ------------------------------------------------------------ */
+  @media only screen and (max-width: 603px){
+ 
+ }
+ /*  ------------------------------------------------------------
+  -----------------ESTILO PARA 533---------------------------
+  ------------------------------------------------------------ */
+  @media only screen and (max-width: 533px){
+ 
+}

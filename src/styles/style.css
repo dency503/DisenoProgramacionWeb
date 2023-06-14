@@ -105,15 +105,6 @@ p {
     padding-bottom: 0 50px;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 40px;
-    border: 2px solid #9c27b0;
-    color: #FFFF;
-    text-decoration: none;
-    background-color: #9c27b0;
-}
 
 .btnproducto {
     display: inline-block;
@@ -131,19 +122,7 @@ p {
     background: #CBA2CE;
 }
 
-.btn:hover {
-    background: none;
-    color: #171717;
-}
 
-.btn-home {
-    display: flex;
-
-}
-
-.btn-home a {
-    margin: 0 10px;
-}
 
 .content {
     height: 50vh;
@@ -415,9 +394,6 @@ p {
     font-weight: bold;
   }
   
-  .btn-group {
-    margin-top: 1rem;
-  }
 
   /*Fin de Categorria Producto*/
 
@@ -880,3 +856,169 @@ p {
        transform: scaleY(-1) rotate(-135deg);
     }
  }
+ #cajacabecera {
+  width: 100%;
+  background: #FFF4FA;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+#cabecera {
+  width: 100%;
+  height: 11%;
+  max-height: 1100px;
+  display: flex;
+  margin: auto;
+  border-bottom-style: solid;
+  border-width: 1px;
+}
+
+#logo {
+  width: 20%;
+  padding: 0px 30px;
+}
+
+.menu {
+  width: 80%;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 30px 0px 0px 0px;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  line-height: 30px;
+  padding: 0px 10px;
+  color: black;
+  font-family: 'Inter';
+  font-size: 16px;
+}
+
+.menu a i {
+  font-size: 16px;
+  padding: 0 5px;
+}
+
+.carro {
+  background-color: grey;
+  margin-left: 20px;
+  font-family: 'Inter';
+}
+
+.menu a:hover {
+  color: #fff;
+  border-bottom: 0px solid #f2f2f2;
+  background-color: #f2e9;
+}
+
+.mmenu {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+#btn-submenu:checked~.mmenu {
+  transform: translateX(0%);
+  transition: all 0.6s;
+}
+#cabecera a img{
+  width: 68px;
+  padding: 0px;
+  border: none;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  #logo {
+      padding: 0px;
+      text-align: center;
+  }
+
+  .menu {
+      width: 100%;
+      display: none;
+  }
+
+  #mmovil {
+      display: block;
+  }
+
+  #btn-menu:checked~.menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #FFF4FA;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      padding: 20px 0px;
+      z-index: 999;
+  }
+
+  .menu a {
+      padding: 10px 0px;
+  }
+
+  .btn {
+      display: flex;
+      flex-direction: row;
+      padding: 0px;
+      border-right-style: none;
+      border-bottom-style: solid;
+      border-width: 1px;
+  }
+
+  .menum {
+      padding: 0px;
+      border-right-style: none;
+      border-bottom-style: solid;
+      border-width: 1px;
+  }
+
+  .mmenu ul {
+      flex-direction: column;
+      background: #FFF4FA;
+      margin: 0;
+      padding: 0;
+  }
+
+  .mmenu a {
+      line-height: 30px;
+      padding: 10px;
+      border-bottom: 1px solid black;
+  }
+
+  .submenum {
+      display: flex;
+      flex-direction: column;
+  }
+
+  #btn-submenu {
+      display: none;
+  }
+
+  #categoria {
+      text-align: left;
+      padding: 0px 6px 0px 0px;
+      font-size: 12px;
+  }
+
+  .carro {
+      margin-left: 0;
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
+  }}

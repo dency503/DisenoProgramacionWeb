@@ -2,10 +2,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 
-import Agregar from '../js/agregaralcarrito'
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080/api';
+
 function ProductList() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -13,12 +12,12 @@ function ProductList() {
  
   
   useEffect(() => {
-    axios.get(`${API_URL}/product/${id}`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/product/${id}`)
     .then((response) => setProduct(response.data))
     .catch(error => {
       setError(true);
        
-        console.error('Ocurrió un error al obtener el producto:', error);
+       
     // Mostrar un mensaje de error al usuario
     console.error('Ocurrió un error al obtener el producto:', error);
     
@@ -84,7 +83,7 @@ function ProductList() {
             </div>
           </div>
         </div>
-        <p>{product.details.description}
+        <p>{product.description}
         </p>
        
       </div>

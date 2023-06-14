@@ -311,7 +311,7 @@ export const ProductoLista = () => {
                             <td>
                                 <Button color='primary' onClick={() => mostrarModalEditar(product.id)}>Editar</Button>
                                 {product.eliminado ? (
-                                    <Button color='success' onClick={() => handleActivar(product.id)}>Activar</Button>
+                                  null // <Button color='success' onClick={() => handleActivar(product.id)}>Activar</Button>
                                 ) : (
                                     <Button color='danger' onClick={() => deleteProduct(product.id)}>Eliminar</Button>
                                 )}

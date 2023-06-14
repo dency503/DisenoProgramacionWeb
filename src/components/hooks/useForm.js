@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import { helpHttp } from '../helpHttp'
-
+import swal from 'sweetalert'
 export const useForm = (initialForm, validateForm) => {
    const [form, setForm] = useState(initialForm)
    const [errors, setErrors] = useState({})
@@ -52,7 +52,7 @@ export const useForm = (initialForm, validateForm) => {
         
          
 try {
-   
+   const API_ENDPOINT ="";
    const res = await helpHttp()
             .post(API_ENDPOINT, {
                body: form,
@@ -66,7 +66,7 @@ try {
                setLoading(false);
                setResponse(true);
                limpiarFormulario();
-            ocultarModalInsertar();
+         
             })
 
             
