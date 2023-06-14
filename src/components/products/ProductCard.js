@@ -30,9 +30,9 @@ function ProductCard(props) {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1280) {
-        setSlidesPerView(3);
+        setSlidesPerView(2);
       } else {
-        setSlidesPerView(5);
+        setSlidesPerView(4);
       }
     };
 

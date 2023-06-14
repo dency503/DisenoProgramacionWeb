@@ -77,6 +77,7 @@ export const ProductoLista = () => {
 
     const ocultarModalInsertar = () => {
         setModalInsertar(false);
+        limpiarFormulario();
     };
 
     const mostrarModalEditar = (id) => {
