@@ -5,6 +5,10 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import img1 from '../img/img1.jpg';
+import img2 from '../img/img2.jpg';
+import img3 from'../img/img3.jpg';
+import img4 from'../img/img4.jpg';
 import CustomPrevIcon from './CustomPrevIcon'
 
 
@@ -33,10 +37,11 @@ export default () => {
        
       >
 
-        <SwiperSlide><img src='https://assets.adidas.com/images/w_1880,f_auto,q_auto/1dae35753c24403e8e64ae8401147793_9366/HK7486_01_laydown.jpg' style={{ height: '300px' }} /></SwiperSlide>
-        <SwiperSlide><img src=
-          'https://assets.adidas.com/images/w_940,f_auto,q_auto/298a90bbce3b4dceb456ac360103711b_9366/GN8451_01_laydown.jpg' style={{ height: '300px' }}
-          alt='Imagen 2' /></SwiperSlide>
+        <SwiperSlide><img src={img1} style={{ height: '650px' }} alt='imagen 2' /></SwiperSlide>
+        <SwiperSlide><img src={img2} style={{ height: '650px' }} alt='imagen 2' /></SwiperSlide>
+        <SwiperSlide><img src={img3} style={{ height: '650px' }} alt='imagen 3' /></SwiperSlide>
+        <SwiperSlide><img src={img2} style={{ height: '650px' }} alt='imagen 4' /></SwiperSlide>
+
 
         <div className="swiper-button-prev1 prev" style={{ color: 'black' }}>
           <CustomPrevIcon />
