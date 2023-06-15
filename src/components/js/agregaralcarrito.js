@@ -5,7 +5,7 @@ function AgregarAlCarrito(props) {
     const [cantidad, setCantidad] = useState(1);
   
     const handleClick = () => {
-      axios.put('http://localhost:8080/carrito/agregar', {
+      axios.put(`${process.env.REACT_APP_API_URL}carrito/agregar`, {
         productoId: props.productid,
         cantidad: cantidad
       }, {

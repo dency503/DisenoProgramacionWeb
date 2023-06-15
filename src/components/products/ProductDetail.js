@@ -13,7 +13,7 @@ function ProductDetail() {
  
   
   useEffect(() => {
-    axios.get(`$${process.env.REACT_APP_API_URL}/product/${id}`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/product/${id}`)
     .then((response) => setProduct(response.data))
     .catch(error => {
       setError(true);
@@ -65,25 +65,11 @@ function ProductDetail() {
     <div className="boxcontainer">
 
       <figure className="imgcontainer"><img
-        src={product.imageName}
-        alt=""/></figure>
+        src={product.urlImage}
+        alt={product.imageName}/></figure>
       <div class="detalleproducto">
         <h1 >{product.name}</h1>
         <p>$ <span> {product.price}</span></p>
-        <div>
-          <span>Talla</span>
-          <div className="btns">
-            <div className="btn">
-              S
-            </div>
-            <div className="btn">
-              M
-            </div>
-            <div className="btn">
-              L
-            </div>
-          </div>
-        </div>
         <p>{product.description}
         </p>
         <Agregar productid={product.id} />
