@@ -13,10 +13,10 @@ function Header() {
         <label for="btn-menu" class="fa-solid fa-bars" id="mmovil"></label>
         <nav class="menu col-md-10 col-12">
             <ul class="nav justify-content-end">
-                <li class="menum nav-item"><a class="nav-link" href="inicio">INICIO</a></li>
-                <li class="menum nav-item"><a class="nav-link" href="nosotros">NOSOTROS</a></li>
-                <li class="menum nav-item"><a class="nav-link" href="cuenta">CUENTA</a></li>
-                <li class="menum nav-item"><a class="nav-link" href="contactenos">CONTACTENOS</a></li>
+                <li class="menum nav-item"><a class="nav-link" href="/">INICIO</a></li>
+                <li class="menum nav-item"><a class="nav-link" href="/nosotros">NOSOTROS</a></li>
+                <li class="menum nav-item"><a class="nav-link" href="/login">CUENTA</a></li>
+                <li class="menum nav-item"><a class="nav-link" href="/contact">CONTACTENOS</a></li>
                 {/*<!-- *******************************************SUB MENÚ******************************************* -->*/}
                 <input type="checkbox" id="btn-submenu" class="d-none" />
                 <li class="submenum nav-item dropdown">
